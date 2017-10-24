@@ -24,8 +24,6 @@ int main(int argc, char ** argv) {
     }
 
     size_t nread = fread(buf, 1, sizeof buf, file);
-    fprintf(stdout, "nread: %d\n", nread);
-    fprintf(stdout, "buf: %s\n", buf+16);
     if (nread > 0) {
         if (nread > 16) {
             switch(buf[8]) {
