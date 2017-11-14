@@ -1,3 +1,6 @@
+CINEMA 2K profile activated
+Other options specified could be overridden
+
 TIFFReadDirectoryCheckOrder: Warning, Invalid TIFF directory; tags are not sorted in ascending order.
 TIFFReadDirectory: Warning, Unknown field with tag 27154 (0x6a12) encountered.
 TIFFReadDirectory: Warning, Unknown field with tag 32512 (0x7f00) encountered.
@@ -5,68 +8,6 @@ TIFFReadDirectory: Warning, Unknown field with tag 15163 (0x3b3b) encountered.
 TIFFReadDirectory: Warning, Unknown field with tag 15318 (0x3bd6) encountered.
 TIFFFetchNormalTag: Warning, Incorrect count for "FillOrder"; tag ignored.
 TIFFReadDirectory: Warning, TIFF directory is missing required "StripByteCounts" field, calculating from imagelength.
-=================================================================
-==114390==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6080000000f4 at pc 0x7f05a3983aa9 bp 0x7ffd1be5ba40 sp 0x7ffd1be5ba38
-WRITE of size 1 at 0x6080000000f4 thread T0
-    #0 0x7f05a3983aa8 in opj_t2_encode_packet /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/t2.c:632:14
-    #1 0x7f05a3980801 in opj_t2_encode_packets /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/t2.c:316:23
-    #2 0x7f05a399619b in opj_tcd_t2_encode /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/tcd.c:2217:11
-    #3 0x7f05a399619b in opj_tcd_encode_tile /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/tcd.c:1390
-    #4 0x7f05a38b5e2b in opj_j2k_write_sod /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/j2k.c:4661:11
-    #5 0x7f05a38b5e2b in opj_j2k_write_all_tile_parts /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/j2k.c:11586
-    #6 0x7f05a38b5e2b in opj_j2k_post_write_tile /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/j2k.c:11287
-    #7 0x7f05a38b445d in opj_j2k_encode /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/j2k.c:11028:15
-    #8 0x7f05a38ff2f8 in opj_encode /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/openjpeg.c:775:20
-    #9 0x50b942 in main /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/bin/jp2/opj_compress.c:1993:36
-    #10 0x7f05a2296680 in __libc_start_main /var/tmp/portage/sys-libs/glibc-2.23-r4/work/glibc-2.23/csu/../csu/libc-start.c:289
-    #11 0x41bc18 in _start (/usr/bin/opj_compress+0x41bc18)
-
-0x6080000000f4 is located 0 bytes to the right of 84-byte region [0x6080000000a0,0x6080000000f4)
-allocated by thread T0 here:
-    #0 0x4d15c8 in malloc /var/tmp/portage/sys-libs/compiler-rt-sanitizers-4.0.1/work/compiler-rt-4.0.1.src/lib/asan/asan_malloc_linux.cc:66
-    #1 0x7f05a39aae29 in opj_malloc /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/opj_malloc.c:196:12
-    #2 0x7f05a38e1760 in opj_j2k_update_rates /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/j2k.c:5157:22
-    #3 0x7f05a38b837f in opj_j2k_exec /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/j2k.c:7954:33
-    #4 0x7f05a38b837f in opj_j2k_start_compress /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/j2k.c:11103
-    #5 0x7f05a38ff19c in opj_start_compress /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/openjpeg.c:758:20
-    #6 0x50b90f in main /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/bin/jp2/opj_compress.c:1970:20
-    #7 0x7f05a2296680 in __libc_start_main /var/tmp/portage/sys-libs/glibc-2.23-r4/work/glibc-2.23/csu/../csu/libc-start.c:289
-
-SUMMARY: AddressSanitizer: heap-buffer-overflow /var/tmp/portage/media-libs/openjpeg-9999/work/openjpeg-9999/src/lib/openjp2/t2.c:632:14 in opj_t2_encode_packet
-Shadow bytes around the buggy address:
-  0x0c107fff7fc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x0c107fff7fd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x0c107fff7fe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x0c107fff7ff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x0c107fff8000: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 fa
-=>0x0c107fff8010: fa fa fa fa 00 00 00 00 00 00 00 00 00 00[04]fa
-  0x0c107fff8020: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x0c107fff8030: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x0c107fff8040: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x0c107fff8050: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x0c107fff8060: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-Shadow byte legend (one shadow byte represents 8 application bytes):
-  Addressable:           00
-  Partially addressable: 01 02 03 04 05 06 07 
-  Heap left redzone:       fa
-  Freed heap region:       fd
-  Stack left redzone:      f1
-  Stack mid redzone:       f2
-  Stack right redzone:     f3
-  Stack after return:      f5
-  Stack use after scope:   f8
-  Global redzone:          f9
-  Global init order:       f6
-  Poisoned by user:        f7
-  Container overflow:      fc
-  Array cookie:            ac
-  Intra object redzone:    bb
-  ASan internal:           fe
-  Left alloca redzone:     ca
-  Right alloca redzone:    cb
-==114390==ABORTING
-CINEMA 2K profile activated
-Other options specified could be overridden
 WARNING:
 Input image bitdepth is 4 bits
 TIF conversion has automatically rescaled to 12-bits
@@ -74,3 +15,85 @@ to comply with cinema profiles.
 [WARNING] JPEG 2000 Profile-3 and 4 (2k/4k dc profile) requires:
 1 single quality layer-> Number of layers forced to 1 (rather than 3)
 -> Rate of the last layer (1.0) will be used[INFO] tile number 1 / 1
+*** Error in `opj_compress': free(): invalid next size (fast): 0x0000000000d3cc60 ***
+======= Backtrace: =========
+/lib/x86_64-linux-gnu/libc.so.6(+0x777e5)[0x7f1ac10dc7e5]
+/lib/x86_64-linux-gnu/libc.so.6(+0x8037a)[0x7f1ac10e537a]
+/lib/x86_64-linux-gnu/libc.so.6(cfree+0x4c)[0x7f1ac10e953c]
+/usr/lib/libopenjp2.so.7(+0xeef7)[0x7f1ac1e36ef7]
+/usr/lib/libopenjp2.so.7(opj_j2k_end_compress+0x108)[0x7f1ac1e46cd8]
+opj_compress(main+0x2547)[0x4056b7]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf0)[0x7f1ac1085830]
+opj_compress(_start+0x29)[0x406549]
+======= Memory map: ========
+00400000-0041f000 r-xp 00000000 08:01 447728                             /usr/bin/opj_compress
+0061e000-0061f000 r--p 0001e000 08:01 447728                             /usr/bin/opj_compress
+0061f000-00620000 rw-p 0001f000 08:01 447728                             /usr/bin/opj_compress
+00d3c000-00d5d000 rw-p 00000000 00:00 0                                  [heap]
+7f1abc000000-7f1abc021000 rw-p 00000000 00:00 0 
+7f1abc021000-7f1ac0000000 ---p 00000000 00:00 0 
+7f1ac018b000-7f1ac01a1000 r-xp 00000000 08:01 399699                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f1ac01a1000-7f1ac03a0000 ---p 00016000 08:01 399699                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f1ac03a0000-7f1ac03a1000 rw-p 00015000 08:01 399699                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f1ac03a1000-7f1ac03a4000 r-xp 00000000 08:01 399685                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7f1ac03a4000-7f1ac05a3000 ---p 00003000 08:01 399685                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7f1ac05a3000-7f1ac05a4000 r--p 00002000 08:01 399685                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7f1ac05a4000-7f1ac05a5000 rw-p 00003000 08:01 399685                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7f1ac05a5000-7f1ac05fc000 r-xp 00000000 08:01 10501                      /usr/lib/x86_64-linux-gnu/libjpeg.so.8.0.2
+7f1ac05fc000-7f1ac07fc000 ---p 00057000 08:01 10501                      /usr/lib/x86_64-linux-gnu/libjpeg.so.8.0.2
+7f1ac07fc000-7f1ac07fd000 r--p 00057000 08:01 10501                      /usr/lib/x86_64-linux-gnu/libjpeg.so.8.0.2
+7f1ac07fd000-7f1ac07fe000 rw-p 00058000 08:01 10501                      /usr/lib/x86_64-linux-gnu/libjpeg.so.8.0.2
+7f1ac07fe000-7f1ac0809000 r-xp 00000000 08:01 10497                      /usr/lib/x86_64-linux-gnu/libjbig.so.0
+7f1ac0809000-7f1ac0a08000 ---p 0000b000 08:01 10497                      /usr/lib/x86_64-linux-gnu/libjbig.so.0
+7f1ac0a08000-7f1ac0a09000 r--p 0000a000 08:01 10497                      /usr/lib/x86_64-linux-gnu/libjbig.so.0
+7f1ac0a09000-7f1ac0a0c000 rw-p 0000b000 08:01 10497                      /usr/lib/x86_64-linux-gnu/libjbig.so.0
+7f1ac0a0c000-7f1ac0a2d000 r-xp 00000000 08:01 399728                     /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f1ac0a2d000-7f1ac0c2c000 ---p 00021000 08:01 399728                     /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f1ac0c2c000-7f1ac0c2d000 r--p 00020000 08:01 399728                     /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f1ac0c2d000-7f1ac0c2e000 rw-p 00021000 08:01 399728                     /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f1ac0c2e000-7f1ac0c47000 r-xp 00000000 08:01 399852                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f1ac0c47000-7f1ac0e46000 ---p 00019000 08:01 399852                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f1ac0e46000-7f1ac0e47000 r--p 00018000 08:01 399852                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f1ac0e47000-7f1ac0e48000 rw-p 00019000 08:01 399852                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f1ac0e48000-7f1ac0e60000 r-xp 00000000 08:01 399807                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f1ac0e60000-7f1ac105f000 ---p 00018000 08:01 399807                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f1ac105f000-7f1ac1060000 r--p 00017000 08:01 399807                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f1ac1060000-7f1ac1061000 rw-p 00018000 08:01 399807                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f1ac1061000-7f1ac1065000 rw-p 00000000 00:00 0 
+7f1ac1065000-7f1ac1225000 r-xp 00000000 08:01 399661                     /lib/x86_64-linux-gnu/libc-2.23.so
+7f1ac1225000-7f1ac1425000 ---p 001c0000 08:01 399661                     /lib/x86_64-linux-gnu/libc-2.23.so
+7f1ac1425000-7f1ac1429000 r--p 001c0000 08:01 399661                     /lib/x86_64-linux-gnu/libc-2.23.so
+7f1ac1429000-7f1ac142b000 rw-p 001c4000 08:01 399661                     /lib/x86_64-linux-gnu/libc-2.23.so
+7f1ac142b000-7f1ac142f000 rw-p 00000000 00:00 0 
+7f1ac142f000-7f1ac1537000 r-xp 00000000 08:01 399731                     /lib/x86_64-linux-gnu/libm-2.23.so
+7f1ac1537000-7f1ac1736000 ---p 00108000 08:01 399731                     /lib/x86_64-linux-gnu/libm-2.23.so
+7f1ac1736000-7f1ac1737000 r--p 00107000 08:01 399731                     /lib/x86_64-linux-gnu/libm-2.23.so
+7f1ac1737000-7f1ac1738000 rw-p 00108000 08:01 399731                     /lib/x86_64-linux-gnu/libm-2.23.so
+7f1ac1738000-7f1ac178a000 r-xp 00000000 08:01 10523                      /usr/lib/x86_64-linux-gnu/liblcms2.so.2.0.6
+7f1ac178a000-7f1ac1989000 ---p 00052000 08:01 10523                      /usr/lib/x86_64-linux-gnu/liblcms2.so.2.0.6
+7f1ac1989000-7f1ac198a000 r--p 00051000 08:01 10523                      /usr/lib/x86_64-linux-gnu/liblcms2.so.2.0.6
+7f1ac198a000-7f1ac198e000 rw-p 00052000 08:01 10523                      /usr/lib/x86_64-linux-gnu/liblcms2.so.2.0.6
+7f1ac198e000-7f1ac198f000 rw-p 00000000 00:00 0 
+7f1ac198f000-7f1ac19ff000 r-xp 00000000 08:01 10950                      /usr/lib/x86_64-linux-gnu/libtiff.so.5.2.4
+7f1ac19ff000-7f1ac1bff000 ---p 00070000 08:01 10950                      /usr/lib/x86_64-linux-gnu/libtiff.so.5.2.4
+7f1ac1bff000-7f1ac1c00000 r--p 00070000 08:01 10950                      /usr/lib/x86_64-linux-gnu/libtiff.so.5.2.4
+7f1ac1c00000-7f1ac1c03000 rw-p 00071000 08:01 10950                      /usr/lib/x86_64-linux-gnu/libtiff.so.5.2.4
+7f1ac1c03000-7f1ac1c27000 r-xp 00000000 08:01 399802                     /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f1ac1c27000-7f1ac1e26000 ---p 00024000 08:01 399802                     /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f1ac1e26000-7f1ac1e27000 r--p 00023000 08:01 399802                     /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f1ac1e27000-7f1ac1e28000 rw-p 00024000 08:01 399802                     /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f1ac1e28000-7f1ac1e7c000 r-xp 00000000 08:01 447704                     /usr/lib/libopenjp2.so.2.2.0
+7f1ac1e7c000-7f1ac207b000 ---p 00054000 08:01 447704                     /usr/lib/libopenjp2.so.2.2.0
+7f1ac207b000-7f1ac207c000 r--p 00053000 08:01 447704                     /usr/lib/libopenjp2.so.2.2.0
+7f1ac207c000-7f1ac207d000 rw-p 00054000 08:01 447704                     /usr/lib/libopenjp2.so.2.2.0
+7f1ac207d000-7f1ac20a3000 r-xp 00000000 08:01 399633                     /lib/x86_64-linux-gnu/ld-2.23.so
+7f1ac217f000-7f1ac2287000 rw-p 00000000 00:00 0 
+7f1ac229f000-7f1ac22a2000 rw-p 00000000 00:00 0 
+7f1ac22a2000-7f1ac22a3000 r--p 00025000 08:01 399633                     /lib/x86_64-linux-gnu/ld-2.23.so
+7f1ac22a3000-7f1ac22a4000 rw-p 00026000 08:01 399633                     /lib/x86_64-linux-gnu/ld-2.23.so
+7f1ac22a4000-7f1ac22a5000 rw-p 00000000 00:00 0 
+7ffd8b480000-7ffd8b4a1000 rw-p 00000000 00:00 0                          [stack]
+7ffd8b534000-7ffd8b536000 r--p 00000000 00:00 0                          [vvar]
+7ffd8b536000-7ffd8b538000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+Aborted (core dumped)
