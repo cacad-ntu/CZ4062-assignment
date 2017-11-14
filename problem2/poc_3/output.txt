@@ -1,0 +1,97 @@
+CINEMA 2K profile activated
+Other options specified could be overridden
+
+TIFFReadDirectoryCheckOrder: Warning, Invalid TIFF directory; tags are not sorted in ascending order.
+TIFFReadDirectory: Warning, Unknown field with tag 6376 (0x18e8) encountered.
+TIFFReadDirectory: Warning, Unknown field with tag 27154 (0x6a12) encountered.
+TIFFReadDirectory: Warning, Unknown field with tag 32512 (0x7f00) encountered.
+TIFFReadDirectory: Warning, Unknown field with tag 15163 (0x3b3b) encountered.
+TIFFFetchNormalTag: Warning, Sanity check on size of "Tag 6376" value failed; tag ignored.
+TIFFFetchNormalTag: Warning, Incorrect count for "FillOrder"; tag ignored.
+TIFFReadDirectory: Warning, TIFF directory is missing required "StripByteCounts" field, calculating from imagelength.
+[WARNING] JPEG 2000 Profile-3 and 4 (2k/4k dc profile) requires:
+1 single quality layer-> Number of layers forced to 1 (rather than 3)
+-> Rate of the last layer (1.0) will be used[INFO] tile number 1 / 1
+*** Error in `opj_compress': corrupted size vs. prev_size: 0x00000000007bb950 ***
+======= Backtrace: =========
+/lib/x86_64-linux-gnu/libc.so.6(+0x777e5)[0x7f0e97e197e5]
+/lib/x86_64-linux-gnu/libc.so.6(+0x80dfb)[0x7f0e97e22dfb]
+/lib/x86_64-linux-gnu/libc.so.6(cfree+0x4c)[0x7f0e97e2653c]
+/usr/lib/libopenjp2.so.7(opj_tcd_destroy+0x1eb)[0x7f0e98ba6a9b]
+/usr/lib/libopenjp2.so.7(+0xeec0)[0x7f0e98b73ec0]
+/usr/lib/libopenjp2.so.7(opj_j2k_end_compress+0x108)[0x7f0e98b83cd8]
+opj_compress(main+0x2547)[0x4056b7]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf0)[0x7f0e97dc2830]
+opj_compress(_start+0x29)[0x406549]
+======= Memory map: ========
+00400000-0041f000 r-xp 00000000 08:01 447728                             /usr/bin/opj_compress
+0061e000-0061f000 r--p 0001e000 08:01 447728                             /usr/bin/opj_compress
+0061f000-00620000 rw-p 0001f000 08:01 447728                             /usr/bin/opj_compress
+007b7000-007d8000 rw-p 00000000 00:00 0                                  [heap]
+7f0e90000000-7f0e90021000 rw-p 00000000 00:00 0 
+7f0e90021000-7f0e94000000 ---p 00000000 00:00 0 
+7f0e96ec8000-7f0e96ede000 r-xp 00000000 08:01 399699                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f0e96ede000-7f0e970dd000 ---p 00016000 08:01 399699                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f0e970dd000-7f0e970de000 rw-p 00015000 08:01 399699                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f0e970de000-7f0e970e1000 r-xp 00000000 08:01 399685                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7f0e970e1000-7f0e972e0000 ---p 00003000 08:01 399685                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7f0e972e0000-7f0e972e1000 r--p 00002000 08:01 399685                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7f0e972e1000-7f0e972e2000 rw-p 00003000 08:01 399685                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7f0e972e2000-7f0e97339000 r-xp 00000000 08:01 10501                      /usr/lib/x86_64-linux-gnu/libjpeg.so.8.0.2
+7f0e97339000-7f0e97539000 ---p 00057000 08:01 10501                      /usr/lib/x86_64-linux-gnu/libjpeg.so.8.0.2
+7f0e97539000-7f0e9753a000 r--p 00057000 08:01 10501                      /usr/lib/x86_64-linux-gnu/libjpeg.so.8.0.2
+7f0e9753a000-7f0e9753b000 rw-p 00058000 08:01 10501                      /usr/lib/x86_64-linux-gnu/libjpeg.so.8.0.2
+7f0e9753b000-7f0e97546000 r-xp 00000000 08:01 10497                      /usr/lib/x86_64-linux-gnu/libjbig.so.0
+7f0e97546000-7f0e97745000 ---p 0000b000 08:01 10497                      /usr/lib/x86_64-linux-gnu/libjbig.so.0
+7f0e97745000-7f0e97746000 r--p 0000a000 08:01 10497                      /usr/lib/x86_64-linux-gnu/libjbig.so.0
+7f0e97746000-7f0e97749000 rw-p 0000b000 08:01 10497                      /usr/lib/x86_64-linux-gnu/libjbig.so.0
+7f0e97749000-7f0e9776a000 r-xp 00000000 08:01 399728                     /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f0e9776a000-7f0e97969000 ---p 00021000 08:01 399728                     /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f0e97969000-7f0e9796a000 r--p 00020000 08:01 399728                     /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f0e9796a000-7f0e9796b000 rw-p 00021000 08:01 399728                     /lib/x86_64-linux-gnu/liblzma.so.5.0.0
+7f0e9796b000-7f0e97984000 r-xp 00000000 08:01 399852                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f0e97984000-7f0e97b83000 ---p 00019000 08:01 399852                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f0e97b83000-7f0e97b84000 r--p 00018000 08:01 399852                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f0e97b84000-7f0e97b85000 rw-p 00019000 08:01 399852                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f0e97b85000-7f0e97b9d000 r-xp 00000000 08:01 399807                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f0e97b9d000-7f0e97d9c000 ---p 00018000 08:01 399807                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f0e97d9c000-7f0e97d9d000 r--p 00017000 08:01 399807                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f0e97d9d000-7f0e97d9e000 rw-p 00018000 08:01 399807                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f0e97d9e000-7f0e97da2000 rw-p 00000000 00:00 0 
+7f0e97da2000-7f0e97f62000 r-xp 00000000 08:01 399661                     /lib/x86_64-linux-gnu/libc-2.23.so
+7f0e97f62000-7f0e98162000 ---p 001c0000 08:01 399661                     /lib/x86_64-linux-gnu/libc-2.23.so
+7f0e98162000-7f0e98166000 r--p 001c0000 08:01 399661                     /lib/x86_64-linux-gnu/libc-2.23.so
+7f0e98166000-7f0e98168000 rw-p 001c4000 08:01 399661                     /lib/x86_64-linux-gnu/libc-2.23.so
+7f0e98168000-7f0e9816c000 rw-p 00000000 00:00 0 
+7f0e9816c000-7f0e98274000 r-xp 00000000 08:01 399731                     /lib/x86_64-linux-gnu/libm-2.23.so
+7f0e98274000-7f0e98473000 ---p 00108000 08:01 399731                     /lib/x86_64-linux-gnu/libm-2.23.so
+7f0e98473000-7f0e98474000 r--p 00107000 08:01 399731                     /lib/x86_64-linux-gnu/libm-2.23.so
+7f0e98474000-7f0e98475000 rw-p 00108000 08:01 399731                     /lib/x86_64-linux-gnu/libm-2.23.so
+7f0e98475000-7f0e984c7000 r-xp 00000000 08:01 10523                      /usr/lib/x86_64-linux-gnu/liblcms2.so.2.0.6
+7f0e984c7000-7f0e986c6000 ---p 00052000 08:01 10523                      /usr/lib/x86_64-linux-gnu/liblcms2.so.2.0.6
+7f0e986c6000-7f0e986c7000 r--p 00051000 08:01 10523                      /usr/lib/x86_64-linux-gnu/liblcms2.so.2.0.6
+7f0e986c7000-7f0e986cb000 rw-p 00052000 08:01 10523                      /usr/lib/x86_64-linux-gnu/liblcms2.so.2.0.6
+7f0e986cb000-7f0e986cc000 rw-p 00000000 00:00 0 
+7f0e986cc000-7f0e9873c000 r-xp 00000000 08:01 10950                      /usr/lib/x86_64-linux-gnu/libtiff.so.5.2.4
+7f0e9873c000-7f0e9893c000 ---p 00070000 08:01 10950                      /usr/lib/x86_64-linux-gnu/libtiff.so.5.2.4
+7f0e9893c000-7f0e9893d000 r--p 00070000 08:01 10950                      /usr/lib/x86_64-linux-gnu/libtiff.so.5.2.4
+7f0e9893d000-7f0e98940000 rw-p 00071000 08:01 10950                      /usr/lib/x86_64-linux-gnu/libtiff.so.5.2.4
+7f0e98940000-7f0e98964000 r-xp 00000000 08:01 399802                     /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f0e98964000-7f0e98b63000 ---p 00024000 08:01 399802                     /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f0e98b63000-7f0e98b64000 r--p 00023000 08:01 399802                     /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f0e98b64000-7f0e98b65000 rw-p 00024000 08:01 399802                     /lib/x86_64-linux-gnu/libpng12.so.0.54.0
+7f0e98b65000-7f0e98bb9000 r-xp 00000000 08:01 447704                     /usr/lib/libopenjp2.so.2.2.0
+7f0e98bb9000-7f0e98db8000 ---p 00054000 08:01 447704                     /usr/lib/libopenjp2.so.2.2.0
+7f0e98db8000-7f0e98db9000 r--p 00053000 08:01 447704                     /usr/lib/libopenjp2.so.2.2.0
+7f0e98db9000-7f0e98dba000 rw-p 00054000 08:01 447704                     /usr/lib/libopenjp2.so.2.2.0
+7f0e98dba000-7f0e98de0000 r-xp 00000000 08:01 399633                     /lib/x86_64-linux-gnu/ld-2.23.so
+7f0e98ebc000-7f0e98fc4000 rw-p 00000000 00:00 0 
+7f0e98fdc000-7f0e98fdf000 rw-p 00000000 00:00 0 
+7f0e98fdf000-7f0e98fe0000 r--p 00025000 08:01 399633                     /lib/x86_64-linux-gnu/ld-2.23.so
+7f0e98fe0000-7f0e98fe1000 rw-p 00026000 08:01 399633                     /lib/x86_64-linux-gnu/ld-2.23.so
+7f0e98fe1000-7f0e98fe2000 rw-p 00000000 00:00 0 
+7ffe107ba000-7ffe107db000 rw-p 00000000 00:00 0                          [stack]
+7ffe107ed000-7ffe107ef000 r--p 00000000 00:00 0                          [vvar]
+7ffe107ef000-7ffe107f1000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+Aborted (core dumped)
