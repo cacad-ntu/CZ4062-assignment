@@ -1,8 +1,54 @@
-root@ntu:/home/user1/vbox# valgrind magick 7.psb null
+root@ntu:/home/user1/vbox# magick input.psb null
+Aborted (core dumped)
+
+root@ntu:/home/user1/vbox# coredumpctl dump
+           PID: 2835 (magick)
+           UID: 0 (root)
+           GID: 0 (root)
+        Signal: 6 (ABRT)
+     Timestamp: Tue 2017-11-14 23:00:07 SGT (2min 6s ago)
+  Command Line: magick input.psb null
+    Executable: /usr/local/bin/magick
+ Control Group: /user.slice/user-1000.slice/session-c1.scope
+          Unit: session-c1.scope
+         Slice: user-1000.slice
+       Session: c1
+     Owner UID: 1000 (user1)
+       Boot ID: 8c243f30a8bb4bc7a4b2e3f0c595ddf5
+    Machine ID: da5c422f7b5c4c698ea4ecba7961801c
+      Hostname: ntu
+      Coredump: /var/lib/systemd/coredump/core.magick.0.8c243f30a8bb4bc7a4b2e3f0c595ddf5.2835.1510671607000000000000.xz
+       Message: Process 2835 (magick) of user 0 dumped core.
+                
+                Stack trace of thread 2835:
+                #0  0x00007f0c51043428 __GI_raise (libc.so.6)
+                #1  0x00007f0c5104502a __GI_abort (libc.so.6)
+                #2  0x00007f0c51a0c3e8 MagickSignalHandler (libMagickCore-7.Q16HDRI.so.1)
+                #3  0x00007f0c513e9390 __restore_rt (libpthread.so.0)
+                #4  0x00007f0c51043428 __GI_raise (libc.so.6)
+                #5  0x00007f0c5104502a __GI_abort (libc.so.6)
+                #6  0x00007f0c51a0c3e8 MagickSignalHandler (libMagickCore-7.Q16HDRI.so.1)
+                #7  0x00007f0c513e9390 __restore_rt (libpthread.so.0)
+                #8  0x00007f0c5107c71a __GI__IO_fwrite (libc.so.6)
+                #9  0x00007f0c51b2d027 WritePSDChannel (libMagickCore-7.Q16HDRI.so.1)
+                #10 0x00007f0c51b2ee8b WritePSDChannels (libMagickCore-7.Q16HDRI.so.1)
+                #11 0x00007f0c51b3037b WritePSDImage (libMagickCore-7.Q16HDRI.so.1)
+                #12 0x00007f0c5198cbc6 WriteImage (libMagickCore-7.Q16HDRI.so.1)
+                #13 0x00007f0c5198d494 WriteImages (libMagickCore-7.Q16HDRI.so.1)
+                #14 0x00007f0c516c23fe CLINoImageOperator (libMagickWand-7.Q16HDRI.so.0)
+                #15 0x00007f0c516c3149 CLIOption (libMagickWand-7.Q16HDRI.so.0)
+                #16 0x00007f0c5165ad14 ProcessCommandOptions (libMagickWand-7.Q16HDRI.so.0)
+                #17 0x00007f0c5165b49f MagickImageCommand (libMagickWand-7.Q16HDRI.so.0)
+                #18 0x00007f0c51675898 MagickCommandGenesis (libMagickWand-7.Q16HDRI.so.0)
+                #19 0x000000000040121b MagickMain (magick)
+                #20 0x00007f0c5102e830 __libc_start_main (libc.so.6)
+                #21 0x0000000000400ff9 _start (magick)
+
+root@ntu:/home/user1/vbox# valgrind magick input.psb null
 ==5077== Memcheck, a memory error detector
 ==5077== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
 ==5077== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==5077== Command: magick 7.psb null
+==5077== Command: magick input.psb null
 ==5077== 
 ==5077== Syscall param read(buf) points to unaddressable byte(s)
 ==5077==    at 0x59FB230: __read_nocancel (syscall-template.S:84)
