@@ -1,0 +1,39 @@
+valgrind ./input large.xml 
+==2118== Memcheck, a memory error detector
+==2118== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2118== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2118== Command: ./input large.xml
+==2118== 
+==2118== Warning: set address range perms: large range [0x15e7d040, 0x25e8d040) (undefined)
+==2118== Warning: set address range perms: large range [0x395d8040, 0x595f8040) (undefined)
+==2118== Warning: set address range perms: large range [0x15e7d028, 0x25e8d058) (noaccess)
+==2118== Warning: set address range perms: large range [0x595f9040, 0x99639040) (undefined)
+==2118== Warning: set address range perms: large range [0x395d8028, 0x595f8058) (noaccess)
+==2118== Warning: set address range perms: large range [0x9963a040, 0x1196ba040) (undefined)
+==2118== Warning: set address range perms: large range [0x595f9028, 0x99639058) (noaccess)
+		^C==2118== 
+==2118== Process terminating with default action of signal 2 (SIGINT)
+==2118==    at 0x4E91118: xmlBufferResize (tree.c:6999)
+==2118==    by 0x4E97B60: xmlParserInputBufferGrow (xmlIO.c:3091)
+==2118==    by 0x4E6C9AF: xmlParserInputGrow (parserInternals.c:353)
+==2118==    by 0x4E6CCEC: xmlNextChar (parserInternals.c:543)
+==2118==    by 0x4E80485: xmlParseMisc (parser.c:9950)
+==2118==    by 0x4E831F4: xmlParseDocument (parser.c:10092)
+==2118==    by 0x4E8368F: xmlSAXParseFileWithData (parser.c:13255)
+==2118==    by 0x400990: parseDoc (input.c:29)
+==2118==    by 0x400AF2: main (input.c:74)
+==2118== 
+==2118== HEAP SUMMARY:
+==2118==     in use at exit: 2,148,019,330 bytes in 89 blocks
+==2118==   total heap usage: 115 allocs, 26 frees, 4,296,023,411 bytes allocated
+==2118== 
+^C^C^C==2118== LEAK SUMMARY:
+==2118==    definitely lost: 0 bytes in 0 blocks
+==2118==    indirectly lost: 0 bytes in 0 blocks
+==2118==      possibly lost: 0 bytes in 0 blocks
+==2118==    still reachable: 2,148,019,330 bytes in 89 blocks
+==2118==         suppressed: 0 bytes in 0 blocks
+==2118== Rerun with --leak-check=full to see details of leaked memory
+==2118== 
+==2118== For counts of detected and suppressed errors, rerun with: -v
+==2118== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
